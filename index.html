@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Media Collection</title>
+
+<style>
+
+section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:#353535;
+  font-family:'Roboto',sans-serif;
+  color:#ffffff;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url('teen01.jpg') center/cover no-repeat;
+  opacity:.3;
+  z-index:-1;
+}
+
+h1{font-size:60px;text-align:center;margin:10px; font-family: serif;}
+h2{font-size:36px;text-align:center;margin-top:80px;}
+h3{color:#d9d9d9;}
+
+.hero{text-align:center;margin-top:120px;}
+
+a.btn{
+  display:inline-block;
+  padding:10px 20px;
+  background:#3c6e71;
+  color:#fff;
+  text-decoration:none;
+  border-radius:5px;
+  margin:5px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 15px;
+}
+
+
+.gallery-item{
+  
+  padding:25px;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.gallery-item img{
+  width:200px;
+  border-radius:10px;
+  border:2px solid #3c6e71;
+  margin-bottom:15px;
+}
+
+.gallery-item iframe{
+  margin-top:15px;
+  border-radius:10px;
+}
+
+.backtop{
+  text-align:center;
+  margin:40px;
+}
+
+.genre{
+  text-align:center;
+  margin-top:40px;
+  font-size:24px;
+  letter-spacing:2px;
+  color:#3c6e71;
+}
+
+
+.beats-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 20px;
+}
+
+.genre-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+p{
+  margin: 5px;
+}
+
+.beats-columns img{
+  float: left;
+}
+
+
+</style>
+</head>
+
+<body id="top">
+
+<!-- HERO -->
+<section id="land" class="hero">
+  <h3>Welcome to my collection</h3>
+  <h1>My Media Archive</h1>
+  <h3>MC Palmero — BSCS 2nd Year</h3>
+  <br>
+  <a class="btn" href="#beats">Beats</a>
+  <a class="btn" href="#movies">Movies</a>
+  <a class="btn" href="#tvshows">TV Shows</a>
+</section>
+
+<!-- ================= BEATS ================= -->
+ <section id="beats-section">
+<h2 id="beats">🎵 My Fave Beats</h2>
+
+<div class="beats-columns">
+
+  <!-- POP COLUMN -->
+  <div class="genre-column">
+    <h3 class="genre">POP</h3>
+
+    <div class="gallery-item">
+      <a href="Beatopia.jpg" target="_self"><img src="Beatopia.jpg" title="Beatopia album image"></a>
+      <caption><em>The Perfect Pair</em></caption>
+      <audio controls muted style="margin-top: 5px;">
+        <source src="beabadoobee - the perfect pair (Official Audio).mp3" type="audio/mp3">
+        
+      </audio>
+      <p><b>Artist:</b> Beabadoobee</p>
+      <p style="width: 250px; opacity: 0.6;">a British-Filipino singer-songwriter based in London, England.</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="Short_n'_Sweet.png" target="_self"><img src="Short_n'_Sweet.png" title="Short 'n Sweet album image"></a>
+      <caption><em>Good Graces</em></caption>
+      <audio controls muted style="margin-top: 5px;">
+        <source src="Sabrina Carpenter  Good Graces (Lyrics).mp3" type="audio/mp3">
+        
+      </audio>
+      <p><b>Artist:</b> Sabrina Carpenter</p>
+      <p style="width: 250px; opacity: 0.6;">an American singer-songwriter and actress.</p>
+    </div>
+  </div>
+
+
+  <!-- R&B COLUMN -->
+  <div class="genre-column">
+    <h3 class="genre">R&B</h3>
+
+    <div class="gallery-item">
+      <a href="AfterHours.png" target="_self"><img src="AfterHours.png" title="After Hours album image"></a>
+      <caption><em>Blinding Lights</em></caption>
+      <audio controls muted style="margin-top: 5px;">
+        <source src="The Weeknd - Blinding Lights (Lyrics).mp3" type="audio/mp3"> 
+      </audio>
+      <p><b>Artist:</b> The Weekend</p>
+      <p style="width: 250px; opacity: 0.6;"> a Canadian singer-songwriter, record producer, and actor.</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="1975.jpg" target="_self"><img src="1975.jpg" title="The 1975 album image"></a>
+      <caption><em>Settle Down</em></caption>
+      <audio controls muted style="margin-top: 5px;">
+        <source src="The 1975 - Settle Down.mp3" type="audio/mp3">
+      </audio>
+      <p><b>Artist:</b> The 1975</p>
+      <p style="width: 250px; opacity: 0.6;">an English pop rock band from Manchester, England.</p>
+    </div>
+  </div>
+
+</div>
+<div class="backtop">
+  <a class="btn" href="#top">Back to Top</a>
+  <a class="btn" href="#movies">Next →</a>
+</div>
+</section>
+
+
+
+<!-- ================= MOVIES ================= -->
+ <section id="movies-section">
+<h2 id="movies">🎬 My Fave Film Movies</h2>
+
+<div class="beats-columns">
+
+  <!-- ROMANCE COLUMN -->
+  <div class="genre-column">
+    <h3 style="margin: 0px;" class="genre">Comedy</h3>
+    <div class="gallery-item" style="padding-top: 0px;">
+      <h3>The Amazing Praybeyt Benjamin</h3>
+      <p style="font-size: 10px; opacity: 0.6;"><i>(click image to watch my fav clip)</i></p>
+      <a href="https://www.youtube.com/watch?v=lL73Ix1KLD4" target="_blank"><img src="TAPB.jpg" title="The amazing praybeyt benjamin poster"></a>
+      <p style="width: 250px; opacity: 0.6;">It follows Colonel Benjamin "Benjie" Santos VIII as he navigates fame, military duty, and a mission to protect a genius child from terrorists.</p> <br><br>
+      <p><b>Director:</b> Wenn V. Deramas</p>
+      <p><b>Stars:</b> Vice Ganda, Richard Yap </p>
+    </div>
+  </div>
+
+  <!-- ACTION COLUMN -->
+  <div class="genre-column">
+    <h3 style="margin: 0px;"class="genre">Horror/Thriller</h3>
+
+    <div class="gallery-item" style="padding-top: 0px;">
+      <h3>Escape Room</h3>
+      <p style="font-size: 10px; opacity: 0.6;"><i>(click image to watch my fav clip)</i></p> 
+      <a href="https://www.youtube.com/watch?v=StoThowf7Y4" target="_blank"><img src="Escape.jpg" title="Escape Room poster"></a>
+      <p style="width: 250px; opacity: 0.6;">a psychological horror film that follows six strangers who are invited to participate in a series of deadly escape rooms, where they must solve puzzles to survive and uncover the dark truth behind the game.</p>
+      <p><b>Director:</b> Adam Robitel</p>
+      <p><b>Stars:</b>Taylor Russel, Logan Miller</p>
+
+ 
+    </div>
+  </div>
+
+</div>
+
+<div class="backtop">
+  <a class="btn" href="#beats">← Previous</a>
+  <a class="btn" href="#top">Back to Top</a>
+  <a class="btn" href="#tvshows">Next →</a>
+</div>
+</section>
+
+
+<!-- ================= TV SHOWS ================= -->
+ <section id="tvshows-section">
+<h2 id="tvshows">📺 My Fave TV Shows</h2>
+
+<div class="beats-columns">
+
+  <!-- KDRAMA COLUMN -->
+  <div class="genre-column">
+    <h3 style="margin: 0px;" class="genre">Legal Drama</h3>
+
+    <div class="gallery-item" style="padding-top: 0px;">
+      <h3>Suits</h3>
+      <p style="font-size: 10px; opacity: 0.6;"><i>(click image to watch my fav clip)</i></p>
+      <a href="https://www.youtube.com/watch?v=Lmv0OoMzyWE" target="_blank"><img src="TheSuits.jpg" title="Suits poster"></a>
+      <p style="width: 250px; opacity: 0.6;">a legal drama that follows the story of Mike Ross, a college dropout with a photographic memory, who lands a job as an associate at a prestigious New York law firm despite never having attended law school.</p>
+      <p><b>Director:</b> Aaron Korsh</p>
+      <p><b>Stars:</b> Gabriel Macht, Rick Hoffman, Patrick Addams</p>
+
+    </div>
+  </div>
+
+  <!-- SCIFI COLUMN -->
+  <div class="genre-column">
+    <h3 style="margin: 0px;"class="genre">Sci-Fi</h3>
+
+    <div class="gallery-item" style="padding-top: 0px;">
+      <h3>Stranger Things</h3>
+      <p style="font-size: 10px; opacity: 0.6;"><i>(click image to watch my fav clip)</i></p>
+      <a href="https://www.youtube.com/watch?v=07812345678" target="_blank"><img src="STRANGER.jpg" title="Stranger Things poster" style="height: 276.93px"></a>
+    <p style="width: 250px; opacity: 0.6;">a science fiction horror series that follows a group of kids in a small town as they encounter supernatural events and government conspiracies.</p> <br><br>
+    <p><b>Director:</b> The Duffer Brothers</p>
+    <p><b>Stars:</b> Millie Bobby Brown, Finn Wolfhard, Winona Ryder</p>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="backtop">
+  <a class="btn" href="#movies">← Previous</a>
+  <a class="btn" href="#top">Back to Top</a>
+</div>
+</section>
+
+
+</body>
+
+</html>
