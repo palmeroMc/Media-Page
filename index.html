@@ -6,121 +6,194 @@
 <title>My Media Collection</title>
 
 <style>
-
-section {
-  min-height: 100vh;
-  padding: 80px 20px;
-  
-}
+html { scroll-behavior: smooth; }
 
 body{
   margin:0;
   min-height:100vh;
   background:#353535;
-  font-family:'Roboto',sans-serif;
-  color:#ffffff;
+  font-family:'DM Sans', sans-serif;
+  color:#fff;
 }
 
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:url('teen01.jpg') center/cover no-repeat;
+  background: url(teen01.jpg);
   opacity:.3;
   z-index:-1;
 }
 
-h1{font-size:60px;text-align:center;margin:10px; font-family: serif;}
+/* HEADERS */
+h1{font-size:60px;text-align:center;margin:10px;font-family: 'Crimson Pro', serif;}
 h2{font-size:36px;text-align:center;margin-top:80px;}
 h3{color:#d9d9d9;}
+h4{color:#ccc;}
 
+/* HERO */
 .hero{text-align:center;margin-top:120px;}
-
 a.btn{
   display:inline-block;
   padding:10px 20px;
   background:#3c6e71;
   color:#fff;
   text-decoration:none;
-  border-radius:5px;
+  border-radius:6px;
   margin:5px;
+  transition: 0.3s ease;
+}
+a.btn:hover{background:#284b63;}
+
+/* SECTION LAYOUT */
+.beats-columns, .beats-columns-tv{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  padding:20px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 15px;
+/* CARD STYLE */
+.genre-column{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
 }
-
 
 .gallery-item{
-  
-  padding:25px;
+  padding:20px;
   border-radius:10px;
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
+  background: rgba(60,110,113,0.1);
+  border:2px solid #3c6e71;
+  background-color: #3c6e71;
 }
 
+
 .gallery-item img{
-  width:200px;
+  width:220px;
   border-radius:10px;
   border:2px solid #3c6e71;
-  margin-bottom:15px;
+  margin-bottom:10px;
+  cursor:pointer;
 }
 
 .gallery-item iframe{
   margin-top:15px;
   border-radius:10px;
+  width:320px;
+  height:180px;
 }
 
-.backtop{
-  text-align:center;
-  margin:40px;
+p{
+  margin:5px;
 }
 
 .genre{
   text-align:center;
-  margin-top:40px;
+  margin-top:20px;
   font-size:24px;
   letter-spacing:2px;
   color:#3c6e71;
 }
 
-
-.beats-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  padding: 20px;
+.backtop{
+  text-align:center;
+  margin:40px 0;
 }
 
-.genre-column {
+.caption{
+  font-size:14px;
+  font-style:italic;
+  color:#d9d9d9;
+}
+
+.info-small{
+  font-size: 13px;
+  color: #ccc;
+  opacity:0.8;
+  width: 250px;
+}
+  header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(53, 53, 53, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 18px 8%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  color: #FFFFFF;
 }
 
-p{
-  margin: 5px;
+.logo {
+  font-size: 22px;
+  font-weight: 700;
 }
 
-.beats-columns img{
-  float: left;
+nav {
+  display: flex;
+  gap: 28px;
 }
 
+nav a {
+  position: relative;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
 
-</style>
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #3c6e71;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+  </style>
 </head>
 
+<body>
+
+<header>
+  <div class="logo">MC Palmero</div>
+  <nav>
+    <a href="https://palmeromc.github.io/Landing/">Home</a>
+    <a href="https://palmeromc.github.io/bio/">Biography</a>
+    <a href="https://palmeromc.github.io/BLOGG1/">Blogs</a>
+    <a href="https://palmeromc.github.io/PhotoDump/">Gallery</a>
+    <a href="https://palmeromc.github.io/Media-Page/">Medias</a>
+    <a href="https://palmeromc.github.io/DreamPlacesToVisit/">Dream Places</a>
+    <a href="https://palmeromc.github.io/Landing/#bucketlist">Bucket List</a>
+    <a href="https://palmeromc.github.io/Landing/#contacts">Contact</a>
+  </nav>
+</header>
 <body id="top">
 
 <!-- HERO -->
-<section id="land" class="hero">
-  <h3>Welcome to my collection</h3>
+<section id="land" class="hero" >
   <h1>My Media Archive</h1>
-  <h3>MC Palmero — BSCS 2nd Year</h3>
+  <h3>Here are my favorite medias</h3>
   <br>
   <a class="btn" href="#beats">Beats</a>
   <a class="btn" href="#movies">Movies</a>
@@ -128,7 +201,7 @@ p{
 </section>
 
 <!-- ================= BEATS ================= -->
- <section id="beats-section">
+<section id="beats-section">
 <h2 id="beats">🎵 My Fave Beats</h2>
 
 <div class="beats-columns">
@@ -138,51 +211,48 @@ p{
     <h3 class="genre">POP</h3>
 
     <div class="gallery-item">
-      <a href="Beatopia.jpg" target="_self"><img src="Beatopia.jpg" title="Beatopia album image"></a>
+      <a href="Beatopia.jpg"><img src="Beatopia.jpg" title="Beatopia album image"></a>
       <caption><em>The Perfect Pair</em></caption>
       <audio controls muted style="margin-top: 5px;">
         <source src="beabadoobee - the perfect pair (Official Audio).mp3" type="audio/mp3">
-        
       </audio>
       <p><b>Artist:</b> Beabadoobee</p>
-      <p style="width: 250px; opacity: 0.6;">a British-Filipino singer-songwriter based in London, England.</p>
+      <p class="info-small">Album: Beatopia | Released: 2021</p>
     </div>
 
     <div class="gallery-item">
-      <a href="Short_n'_Sweet.png" target="_self"><img src="Short_n'_Sweet.png" title="Short 'n Sweet album image"></a>
+      <a href="Short_n'_Sweet.png"><img src="Short_n'_Sweet.png" title="Short 'n Sweet album image"></a>
       <caption><em>Good Graces</em></caption>
       <audio controls muted style="margin-top: 5px;">
         <source src="Sabrina Carpenter  Good Graces (Lyrics).mp3" type="audio/mp3">
-        
       </audio>
       <p><b>Artist:</b> Sabrina Carpenter</p>
-      <p style="width: 250px; opacity: 0.6;">an American singer-songwriter and actress.</p>
+      <p class="info-small">Album: Short 'n Sweet | Released: 2020</p>
     </div>
   </div>
-
 
   <!-- R&B COLUMN -->
   <div class="genre-column">
     <h3 class="genre">R&B</h3>
 
     <div class="gallery-item">
-      <a href="AfterHours.png" target="_self"><img src="AfterHours.png" title="After Hours album image"></a>
+      <a href="AfterHours.png"><img src="AfterHours.png" title="After Hours album image"></a>
       <caption><em>Blinding Lights</em></caption>
       <audio controls muted style="margin-top: 5px;">
         <source src="The Weeknd - Blinding Lights (Lyrics).mp3" type="audio/mp3"> 
       </audio>
-      <p><b>Artist:</b> The Weekend</p>
-      <p style="width: 250px; opacity: 0.6;"> a Canadian singer-songwriter, record producer, and actor.</p>
+      <p><b>Artist:</b> The Weeknd</p>
+      <p class="info-small">Album: After Hours | Released: 2020</p>
     </div>
 
     <div class="gallery-item">
-      <a href="1975.jpg" target="_self"><img src="1975.jpg" title="The 1975 album image"></a>
+      <a href="1975.jpg"><img src="1975.jpg" title="The 1975 album image"></a>
       <caption><em>Settle Down</em></caption>
       <audio controls muted style="margin-top: 5px;">
         <source src="The 1975 - Settle Down.mp3" type="audio/mp3">
       </audio>
       <p><b>Artist:</b> The 1975</p>
-      <p style="width: 250px; opacity: 0.6;">an English pop rock band from Manchester, England.</p>
+      <p class="info-small">Album: The 1975 | Released: 2013</p>
     </div>
   </div>
 
@@ -193,40 +263,36 @@ p{
 </div>
 </section>
 
-
-
 <!-- ================= MOVIES ================= -->
- <section id="movies-section">
+<section id="movies-section">
 <h2 id="movies">🎬 My Fave Film Movies</h2>
 
 <div class="beats-columns">
 
-  <!-- ROMANCE COLUMN -->
+  <!-- COMEDY -->
   <div class="genre-column">
-    <h3 style="margin: 0px;" class="genre">Comedy</h3>
-    <div class="gallery-item" style="padding-top: 0px;">
+    <h3 class="genre">Comedy</h3>
+    <div class="gallery-item">
       <h3>The Amazing Praybeyt Benjamin</h3>
-      <p style="font-size: 10px; opacity: 0.6;"><i>(click image to watch my fav clip)</i></p>
-      <a href="https://www.youtube.com/watch?v=lL73Ix1KLD4" target="_blank"><img src="TAPB.jpg" title="The amazing praybeyt benjamin poster"></a>
-      <p style="width: 250px; opacity: 0.6;">It follows Colonel Benjamin "Benjie" Santos VIII as he navigates fame, military duty, and a mission to protect a genius child from terrorists.</p> <br><br>
+      <a href="TAPB.jpg"><img src="TAPB.jpg" title="Poster"></a>
+      <p style="width:250px; opacity:0.6;">Colonel Benjamin "Benjie" Santos VIII navigates fame, military duty, and protects a genius child.</p>
       <p><b>Director:</b> Wenn V. Deramas</p>
-      <p><b>Stars:</b> Vice Ganda, Richard Yap </p>
+      <p><b>Stars:</b> Vice Ganda, Richard Yap</p>
+      <!-- Bigger YouTube thumbnail -->
+      <iframe src="https://www.youtube.com/embed/lL73Ix1KLD4" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
-  <!-- ACTION COLUMN -->
+  <!-- HORROR/THRILLER -->
   <div class="genre-column">
-    <h3 style="margin: 0px;"class="genre">Horror/Thriller</h3>
-
-    <div class="gallery-item" style="padding-top: 0px;">
+    <h3 class="genre">Horror/Thriller</h3>
+    <div class="gallery-item">
       <h3>Escape Room</h3>
-      <p style="font-size: 10px; opacity: 0.6;"><i>(click image to watch my fav clip)</i></p> 
-      <a href="https://www.youtube.com/watch?v=StoThowf7Y4" target="_blank"><img src="Escape.jpg" title="Escape Room poster"></a>
-      <p style="width: 250px; opacity: 0.6;">a psychological horror film that follows six strangers who are invited to participate in a series of deadly escape rooms, where they must solve puzzles to survive and uncover the dark truth behind the game.</p>
+      <a href="Escape.jpg"><img src="Escape.jpg" title="Escape Room Poster"></a>
+      <p style="width:250px; opacity:0.6;">Six strangers enter deadly escape rooms and must solve puzzles to survive.</p>
       <p><b>Director:</b> Adam Robitel</p>
-      <p><b>Stars:</b>Taylor Russel, Logan Miller</p>
-
- 
+      <p><b>Stars:</b> Taylor Russel, Logan Miller</p>
+      <iframe src="https://www.youtube.com/embed/StoThowf7Y4" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -239,40 +305,35 @@ p{
 </div>
 </section>
 
-
 <!-- ================= TV SHOWS ================= -->
- <section id="tvshows-section">
+<section id="tvshows-section">
 <h2 id="tvshows">📺 My Fave TV Shows</h2>
 
-<div class="beats-columns">
+<div class="beats-columns-tv">
 
-  <!-- KDRAMA COLUMN -->
+  <!-- LEGAL DRAMA -->
   <div class="genre-column">
-    <h3 style="margin: 0px;" class="genre">Legal Drama</h3>
-
-    <div class="gallery-item" style="padding-top: 0px;">
+    <h3 class="genre">Legal Drama</h3>
+    <div class="gallery-item">
       <h3>Suits</h3>
-      <p style="font-size: 10px; opacity: 0.6;"><i>(click image to watch my fav clip)</i></p>
-      <a href="https://www.youtube.com/watch?v=Lmv0OoMzyWE" target="_blank"><img src="TheSuits.jpg" title="Suits poster"></a>
-      <p style="width: 250px; opacity: 0.6;">a legal drama that follows the story of Mike Ross, a college dropout with a photographic memory, who lands a job as an associate at a prestigious New York law firm despite never having attended law school.</p>
+      <a href="TheSuits.jpg"><img src="TheSuits.jpg" title="Suits Poster"></a>
+      <p style="width:250px; opacity:0.6;">Mike Ross, a college dropout with photographic memory, lands a law firm job despite no law school.</p>
       <p><b>Director:</b> Aaron Korsh</p>
       <p><b>Stars:</b> Gabriel Macht, Rick Hoffman, Patrick Addams</p>
-
+      <iframe src="https://www.youtube.com/embed/VkEjr6gNRmQ" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
-  <!-- SCIFI COLUMN -->
+  <!-- SCIFI -->
   <div class="genre-column">
-    <h3 style="margin: 0px;"class="genre">Sci-Fi</h3>
-
-    <div class="gallery-item" style="padding-top: 0px;">
+    <h3 class="genre">Sci-Fi</h3>
+    <div class="gallery-item">
       <h3>Stranger Things</h3>
-      <p style="font-size: 10px; opacity: 0.6;"><i>(click image to watch my fav clip)</i></p>
-      <a href="https://www.youtube.com/watch?v=07812345678" target="_blank"><img src="STRANGER.jpg" title="Stranger Things poster" style="height: 276.93px"></a>
-    <p style="width: 250px; opacity: 0.6;">a science fiction horror series that follows a group of kids in a small town as they encounter supernatural events and government conspiracies.</p> <br><br>
-    <p><b>Director:</b> The Duffer Brothers</p>
-    <p><b>Stars:</b> Millie Bobby Brown, Finn Wolfhard, Winona Ryder</p>
-
+      <a href="STRANGER.jpg"><img src="STRANGER.jpg" title="Stranger Things Poster"></a>
+      <p style="width:250px; opacity:0.6;">Kids in a small town encounter supernatural events and government conspiracies.</p>
+      <p><b>Director:</b> The Duffer Brothers</p>
+      <p><b>Stars:</b> Millie Bobby Brown, Finn Wolfhard, Winona Ryder</p>
+      <iframe src="https://www.youtube.com/embed/E4ScPro8YcI" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -281,10 +342,9 @@ p{
 <div class="backtop">
   <a class="btn" href="#movies">← Previous</a>
   <a class="btn" href="#top">Back to Top</a>
+  <a class="btn" href="DREAMDESTINATIONS.html">Proceed to Dream Destinations Page →</a>
 </div>
 </section>
 
-
 </body>
-
 </html>
